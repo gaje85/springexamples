@@ -47,12 +47,12 @@
 				pointcut-ref="pointCutAfterThrowing"  />
 			
 			
-			<!-- @Around -->
+			<!-- @Around 
 			<aop:pointcut id="pointCutAround"
 				expression="execution(* com.example.customer.bo.CustomerBo.*(..))" />
 			
 			<aop:around method="logAround" pointcut-ref="pointCutAround"  />
-			
+			-->
 		</aop:aspect>
 
 	</aop:config>
