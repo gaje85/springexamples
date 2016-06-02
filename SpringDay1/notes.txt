@@ -1,0 +1,49 @@
+none â€“ No dependency checking.
+simple â€“ If any properties of primitive type (int, long,doubleâ€¦) and collection types (map, list..) have not been set, UnsatisfiedDependencyException will be thrown.
+objects â€“ If any properties of object type have not been set, UnsatisfiedDependencyException will be thrown.
+all â€“ If any properties of any type have not been set, an UnsatisfiedDependencyException
+will be thrown.
+
+Annotation based dependency injection 
+
+@Component Indicates a auto scan component.
+@Repository Indicates DAO component in the persistence layer.
+@Service Indicates a Service component in the business layer.
+@Controller Indicates a controller component in the presentation layer.
+
+
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+ 
+	<context:component-scan base-package="com.example" >
+ 
+		<context:include-filter type="regex" 
+                       expression="com.example.customer.dao.*DAO.*" />
+ 
+		<context:include-filter type="regex" 
+                       expression="com.example.customer.services.*Service.*" />
+ 
+	</context:component-scan>
+ 
+</beans>
+
+
+
+no â€“ Default, no auto wiring, set it manually via â€œrefâ€� attribute
+byName â€“ Auto wiring by property name. If the name of a bean is same as the name of other bean property, auto wire it.
+byType â€“ Auto wiring by property data type. If data type of a bean is compatible with the data type of other bean property, auto wire it.
+constructor â€“ byType mode in constructor argument.
+autodetect â€“ If a default constructor is found, use â€œautowired by constructorâ€�; Otherwise, use â€œautowire by typeâ€�
+
+
+
+ â€œAutowiring by AutoDetectâ€œ, means chooses â€œautowire by constructorâ€� if default constructor (argument with any data type), otherwise uses â€œautowire by typeâ€œ
+ 
+ 
+ 

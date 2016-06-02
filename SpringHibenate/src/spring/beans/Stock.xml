@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Stock business object -->
+   <bean id="stockBo" class="com.example.stock.bo.impl.StockBoImpl" >
+   		<property name="stockDao" ref="stockDao" />
+   </bean>
+ 
+   <!-- Stock Data Access Object -->
+   <bean id="stockDao" class="com.example.stock.dao.impl.StockDaoImpl" >
+   		<property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+   
+   <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+   		<property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+   
+   <bean id="stockDaohibtemplate" class="com.example.stock.dao.impl.StockDaoImplHibTemplate" >
+   		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+   </bean>
+   
+   		
+</beans>

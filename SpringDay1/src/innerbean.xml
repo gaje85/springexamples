@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+ 
+	<bean id="customer" class="com.example.innerbean.Customer">
+		<property name="person">
+			<bean class="com.example.innerbean.Person">
+				<property name="name" value="sathish" />
+				<property name="address" value="address" />
+				<property name="age" value="45" />
+			</bean>
+		</property>
+	</bean>
+</beans>
