@@ -10,10 +10,10 @@ public class App {
 
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("Spring-Customer.xml");
 
-		CustomerBo customer = (CustomerBo) appContext.getBean("customerBo");
+		//CustomerBo customer = (CustomerBo) appContext.getBean("customerBo");
+		CustomerBo customer = appContext.getBean(CustomerBo.class);
+		System.out.println(customer.getClass().getName());
 		customer.addCustomer();
-		
-		//customer.addCustomerReturnValue();
 		
 	  // customer.addCustomerThrowException();
 		

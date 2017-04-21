@@ -41,7 +41,7 @@ public class JdbcCustomerDAO extends JdbcDaoSupport implements CustomerDAO
 	//insert batch example
 	public void insertBatch(final List<Customer> customers){
 		
-		String sql = "INSERT INTO CUSTOMER " +
+		String sql = "INSERTe INTO CUSTOMER " +
 			"(CUST_ID, NAME, AGE) VALUES (?, ?, ?)";
 			
 		getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {

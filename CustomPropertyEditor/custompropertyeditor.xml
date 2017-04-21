@@ -1,0 +1,110 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+
+
+ 	<bean id="force-init"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="staticMethod">
+			<value>com.MyClass.initialize</value>
+		</property>
+	</bean>
+
+
+
+	<bean id="sample" class="com.DependsOnSimpleType">
+		<property name="type">
+			<value>SimpleType Name</value>
+		</property>
+	</bean> 
+
+	  <bean id="customEditorConfigurer"
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="com.SimpleType">
+					<bean id="simpleEditor" class="com.SimpleTypeEditor">
+						
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	 <bean id="sysProps"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass">
+			<value>com.TargetClass</value>
+		</property>
+		<property name="targetMethod">
+			<value>getList</value>
+		</property>
+	</bean>
+
+	<bean id="javaVersion"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" 
+				depends-on="force-init">
+		<property name="targetObject">
+			<ref bean="sysProps" />
+		</property>
+		<property name="targetMethod">
+			<value>get</value>
+		</property>
+		<property name="arguments">
+			<list>
+				<value>1</value>
+				
+			</list>
+		</property>
+	</bean>
+
+	<bean id="FieldBean" class="com.BeanFieldValue">
+		<property name="isolation">
+			<bean id="java.sql.Connection.TRANSACTION_SERIALIZABLE"
+				class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+		</property>
+	</bean>
+ 
+	<bean id="cal" class="com.Calculator" >
+		   <replaced-method name="add"
+			replacer="replacementComputeValue">
+			<arg-type>int</arg-type>
+			<arg-type>int</arg-type>
+		</replaced-method>
+		 <replaced-method name="sub"
+			replacer="replacementComputeValue">
+			<arg-type>int</arg-type>
+			<arg-type>int</arg-type>
+		</replaced-method>
+	</bean>
+	
+	<bean id="replacementComputeValue"
+		class="com.ReplacementComputeValue">
+	</bean>
+	
+	 <bean id="a" class="com.A" autowire="byName">
+	
+  	</bean>
+	
+	<bean id="bb" class="com.B" >
+	</bean>
+	
+	<bean id="cc" class="com.C" >
+	</bean>
+	 
+	
+	<bean id="command" class="com.methodlookup.AsyncCommand" scope="prototype">
+    
+	</bean>
+
+	<bean id="commandManager" class="com.methodlookup.CommandManager">
+    	<lookup-method name="createCommand" bean="command"/>
+	</bean>
+	
+	
+	
+	
+</beans>

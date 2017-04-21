@@ -19,7 +19,7 @@
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="select*"  read-only="true" />
-			<tx:method name="*" no-rollback-for="java.lang.NullPointerException" propagation="REQUIRED"/>  
+			<tx:method name="*" rollback-for="java.lang.NullPointerException" propagation="REQUIRED"/>  
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
@@ -28,9 +28,9 @@
 	</aop:config>
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/spring"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/test"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="1234"></property>
+		<property name="password" value=""></property>
 	</bean>
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>

@@ -31,7 +31,7 @@ public class JdbcTemplateApp
          
          System.out.println("Batch Insert Done!");
          
-         Customer customerA = customerDAO.findByCustomerId(3);
+         Customer customerA = customerDAO.findByCustomerId(1);
          System.out.println("Customer A : " + customerA);
          
          Customer customerB = customerDAO.findByCustomerId2(1);

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/net/sf/ehcache/ehcache/2.9.0/ehcache-2.9.0.jar" sourcepath="M2_REPO/net/sf/ehcache/ehcache/2.9.0/ehcache-2.9.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/G:/maven/repo/net/sf/ehcache/ehcache/2.9.0/ehcache-2.9.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/G:/maven/repo/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13.jar" sourcepath="M2_REPO/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/G:/maven/repo/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/ch/qos/logback/logback-core/1.0.13/logback-core-1.0.13.jar" sourcepath="M2_REPO/ch/qos/logback/logback-core/1.0.13/logback-core-1.0.13-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-context/4.1.4.RELEASE/spring-context-4.1.4.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-context/4.1.4.RELEASE/spring-context-4.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-aop/4.1.4.RELEASE/spring-aop-4.1.4.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-aop/4.1.4.RELEASE/spring-aop-4.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" sourcepath="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-beans/4.1.4.RELEASE/spring-beans-4.1.4.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-beans/4.1.4.RELEASE/spring-beans-4.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-core/4.1.4.RELEASE/spring-core-4.1.4.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-core/4.1.4.RELEASE/spring-core-4.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-expression/4.1.4.RELEASE/spring-expression-4.1.4.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-expression/4.1.4.RELEASE/spring-expression-4.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-context-support/4.1.4.RELEASE/spring-context-support-4.1.4.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-context-support/4.1.4.RELEASE/spring-context-support-4.1.4.RELEASE-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
